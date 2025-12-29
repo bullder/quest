@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Добро пожаловать</h1>
+        <p>Мы рады видеть вас на нашем сайте.</p>
+        <p>Кажется вы что то ищете? Но думаю мы надем это где то глубже в недрах нашей истории.</p>
+        <p>Правила просты. Думай. Ищи. Используй только буквы нижнего регистра.</p>
+
+        <form class="input-group" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Меня зовут" required data-error="Nothing found in the depths...">
+            <button type="submit">Вперед</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
