@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+.kiden {
+    color: var(--bg-color);
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);

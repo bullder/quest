@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глава 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Буквы</h1>
+        <p>Обмой меня каплей воды ключевой,</p>
+        <p>Жизнь влей в осколки, что пали на пол.</p>
+        <p>Исчезни в оврагах, где змей чешуя,</p>
+        <p>Верни меня в мир, где я был не один.</p>
+        <p>И губ прикоснись, я проснусь молодой.</p>
+
+        <form class="input-group" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Мне нужно слово" required
+                data-error="Не видишь? Буквы! С них все начинается">
+            <button type="submit">Вперед</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
