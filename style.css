@@ -20,6 +20,11 @@
     color: var(--bg-color);
 }
 
+.kiden::selection {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
