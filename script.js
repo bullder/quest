@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             console.log("Response:", result);
-            alert(result.ok ? "Sent!" : "Error: " + result.description);
         } catch (err) {
             console.error("Network Error:", err);
         }
