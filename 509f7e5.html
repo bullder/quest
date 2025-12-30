@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Success</title>
-    <style>
-        body {
-            background: #111;
-            color: #fff;
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 4rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Success!</h1>
+    <div class="container">
+        <h1>Добро пожаловать</h1>
+        <p>Мы рады видеть вас на нашем сайте.</p>
+        <p>Кажется вы что то ищете? Но думаю мы надем это где то глубже в недрах нашей истории.</p>
+        <p>Правила просты. Думай. Ищи. Ответ всегда где то рядом, на поверхности или скрыт, но рядом.</p>
+
+        <form class="input-group" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Меня зовут" required data-error="Вы видимо посторонний">
+            <button type="submit">Вперед</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
