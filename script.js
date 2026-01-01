@@ -1,3 +1,20 @@
+async function sendToTelegram(message) {
+    const url = `https://msg.garifull.in/notify`;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message })
+        });
+
+        const result = await response.json();
+        console.log("Response:", result);
+    } catch (err) {
+        console.error("Network Error:", err);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const input = document.querySelector('input[type="text"]');
@@ -13,22 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return hashHex;
     }
 
-    async function sendToTelegram(message) {
-        const url = `https://msg.garifull.in/notify`;
 
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({message: message})
-            });
-
-            const result = await response.json();
-            console.log("Response:", result);
-        } catch (err) {
-            console.error("Network Error:", err);
-        }
-    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
